@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { TailwindProvider } from "tailwind-rn";
+import utilities from "./tailwind.json";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
+
+import IntroScreen from "./src/screens/IntroScreen";
+import RegisterScreen from "./src/screens/RegisterScreen";
+
+import initLanguages from "./src/utils/Languages";
+import ProfileCreatorScreen from "./src/screens/ProfileCreatorScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
+  //Languages
+  initLanguages();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TailwindProvider utilities={utilities}>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+          initialRouteName="ProfileCreatorScreen"
+        >
+          <Stack.Screen name="Intro" component={IntroScreen} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
+          <Stack.Screen name="ProfileCreatorScreen" component={ProfileCreatorScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </TailwindProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
