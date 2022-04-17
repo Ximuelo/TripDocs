@@ -1,0 +1,22 @@
+{
+  "translation": {
+    "IntroScreen_Start": "Empezar",
+    "HaveAccount": "Ya tienes una cuenta? ",
+    "Login": "Inicia Sesión",
+    "Register": "Crear Cuenta con Email",
+    "Email_Input": "Tu Email:",
+    "Email_Placeholder": "example@gmail.com",
+    "Email_Error": "Email Invalido",
+    "Password_Input": "Tu Contraseña:",
+    "Password_Placeholder": "*******",
+    "Password_Error": "La contraseña debe tener al menos 8 caracteres, 1 minuscula, 1 mayuscula y 1 caracter especial",
+    "PasswordConfirm_Input": "Confirma Tu Contraseña:",
+    "PasswordConfirm_Placeholder": "*******",
+    "PasswordConfirm_Error": "La contraseña no coincide",
+    "Register_Button": "Registrarse",
+    "Policy_Privacy": "Politica de Privacidad",
+    "NamePlaceholder": "Nombre",
+    "Continue": "Continuar",
+    "AvatarOptions": ["Piel", "Cuerpo", "Boca", "Nariz", "Vello Facial", "Ojos", "Pelo"]
+  }
+}
