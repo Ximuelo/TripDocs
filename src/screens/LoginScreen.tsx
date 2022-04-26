@@ -33,7 +33,6 @@ export default function RegisterScreen() {
 
   //refs
   const passwordRef = React.createRef<TextInput>();
-  const confirmPasswordRef = React.createRef<TextInput>();
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -63,31 +62,6 @@ export default function RegisterScreen() {
               focusref={confirmPasswordRef}
               confirm={false}
             />
-            <Password_Input
-              text={t("PasswordConfirm_Input")}
-              placeholder={t("Password_Placeholder")}
-              state={ConfirmPasswordState}
-              reference={confirmPasswordRef}
-              error={t("PasswordConfirm_Error")}
-              confirm={true}
-              passwordToCheck={password}
-            />
-
-            <View style={tailwind("pl-3 mt-3 flex-row items-center")}>
-              <CheckBox
-                disabled={false}
-                value={toggleCheckBox}
-                onValueChange={(newValue) => setToggleCheckBox(newValue)}
-              />
-              <Text
-                style={[
-                  tailwind("text-lg underline pl-2"),
-                  tailwind(toggleCheckBox ? "text-white" : "text-rose-500"),
-                ]}
-              >
-                *{t("Policy_Privacy")}
-              </Text>
-            </View>
           </View>
           <View style={tailwind("items-center mt-8")}>
             <Button
