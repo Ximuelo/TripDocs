@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import { View, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
+import { View, TouchableWithoutFeedback, Keyboard, ScrollView, Text } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { useTailwind } from "tailwind-rn/dist";
 import BackArrow from "../components/BackArrow";
@@ -13,7 +13,14 @@ export default function ProfileCreatorScreen() {
   const tailwind = useTailwind();
   const { t } = useTranslation();
   const [name, setName] = useState("");
-  const [characters, setCharacters] = useState("skin_0|body1_0|mouth1|nose1|facialHair2_0|eyes1|hair1");
+  const [skin,setSkin] = useState("skin_0")
+  const [body,setBody] = useState("body1_0")
+  const [mouth,setMouth] = useState("mouth1")
+  const [nose,setNose] = useState("nose1")
+  const [facialHair,setFacialHair]=useState("facialHair1")
+  const [eyes,setEyes]=useState("eyes1")
+  const [hair,setHair] = useState("hair3_0")
+  const [characters, setCharacters] = useState(skin+"|"+body+"|"+mouth+"|"+nose+"|"+facialHair+"|"+eyes+"|"+hair);
 
   const nameRef = React.createRef<TextInput>();
 
@@ -21,6 +28,11 @@ export default function ProfileCreatorScreen() {
     //Ref to the name input when page loads
     nameRef.current?.focus();
   });
+
+  useEffect(()=>{
+    // console.log("test")
+    setCharacters(skin+"|"+body+"|"+mouth+"|"+nose+"|"+facialHair+"|"+eyes+"|"+hair)
+  },[skin,body, mouth, nose, facialHair, eyes, hair])
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -31,14 +43,18 @@ export default function ProfileCreatorScreen() {
             placeholder={t("NamePlaceholder")}
             ref={nameRef}
             maxLength={14}
+            multiline={true}
             value={name}
             onChangeText={setName}
-            style={tailwind("text-white font-bold text-4xl mt-4 mb-4 text-center w-64 self-center")}
+            style={tailwind("text-white font-bold text-4xl mt-4 mb-4 text-center w-72 self-center")}
           />
           <View style={tailwind("bg-white rounded-full overflow-hidden")}>
             <Profile style={"w-44 h-44"} characters={characters} />
           </View>
-          <Selector />
+          <Selector skin={skin} setSkin={setSkin} body={body} setBody={setBody} mouth={mouth} setMouth={setMouth}
+          nose={nose} setNose={setNose} facialHair={facialHair} setFacialHair={setFacialHair} eyes={eyes}
+          setEyes={setEyes} hair={hair} setHair={setHair}
+          />
           <Button text={t("Continue")} />
         </View>
       </ScrollView>

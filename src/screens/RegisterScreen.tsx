@@ -40,7 +40,7 @@ export default function RegisterScreen() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ScrollView style={tailwind("bg-[#212530] flex-1")}>
+      <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
         <KeyboardAvoidingView style={{ flex: 1 }} keyboardVerticalOffset={-150} behavior={"position"}>
           <BackArrow />
           <Text style={tailwind("text-white font-bold text-4xl pt-4 text-center w-64 self-center")}>

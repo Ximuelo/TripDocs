@@ -74,7 +74,7 @@ export function Password_Input(props: any) {
             style={tailwind("h-12 w-10/12")}
             placeholder={placeholder}
             ref={reference}
-            onSubmitEditing={() => focusref.current?.focus()}
+            // onSubmitEditing={() => focusref.current?.focus()}
             secureTextEntry={visiblePassword}
             autoCapitalize="none"
             returnKeyType="next"

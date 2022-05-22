@@ -29,6 +29,31 @@
 			"marginTop": 8
 		}
 	},
+	"mt-4": {
+		"style": {
+			"marginTop": 16
+		}
+	},
+	"mb-4": {
+		"style": {
+			"marginBottom": 16
+		}
+	},
+	"ml-1": {
+		"style": {
+			"marginLeft": 4
+		}
+	},
+	"mr-1": {
+		"style": {
+			"marginRight": 4
+		}
+	},
+	"mb-1": {
+		"style": {
+			"marginBottom": 4
+		}
+	},
 	"mt-20": {
 		"style": {
 			"marginTop": 80
@@ -59,16 +84,6 @@
 			"marginRight": 20
 		}
 	},
-	"mt-4": {
-		"style": {
-			"marginTop": 16
-		}
-	},
-	"mb-4": {
-		"style": {
-			"marginBottom": 16
-		}
-	},
 	"mt-8": {
 		"style": {
 			"marginTop": 32
@@ -77,6 +92,16 @@
 	"mt-3": {
 		"style": {
 			"marginTop": 12
+		}
+	},
+	"ml-3": {
+		"style": {
+			"marginLeft": 12
+		}
+	},
+	"ml-4": {
+		"style": {
+			"marginLeft": 16
 		}
 	},
 	"flex": {
@@ -89,16 +114,6 @@
 			"height": 48
 		}
 	},
-	"h-16": {
-		"style": {
-			"height": 64
-		}
-	},
-	"h-44": {
-		"style": {
-			"height": 176
-		}
-	},
 	"h-80": {
 		"style": {
 			"height": 320
@@ -107,6 +122,26 @@
 	"h-8": {
 		"style": {
 			"height": 32
+		}
+	},
+	"h-44": {
+		"style": {
+			"height": 176
+		}
+	},
+	"h-16": {
+		"style": {
+			"height": 64
+		}
+	},
+	"h-40": {
+		"style": {
+			"height": 160
+		}
+	},
+	"h-36": {
+		"style": {
+			"height": 144
 		}
 	},
 	"w-8": {
@@ -129,6 +164,11 @@
 			"width": "100%"
 		}
 	},
+	"w-44": {
+		"style": {
+			"width": 176
+		}
+	},
 	"w-16": {
 		"style": {
 			"width": 64
@@ -139,9 +179,9 @@
 			"width": 256
 		}
 	},
-	"w-44": {
+	"w-72": {
 		"style": {
-			"width": 176
+			"width": 288
 		}
 	},
 	"flex-1": {
@@ -156,14 +196,14 @@
 			"flexDirection": "row"
 		}
 	},
+	"flex-wrap": {
+		"style": {
+			"flexWrap": "wrap"
+		}
+	},
 	"items-center": {
 		"style": {
 			"alignItems": "center"
-		}
-	},
-	"justify-center": {
-		"style": {
-			"justifyContent": "center"
 		}
 	},
 	"justify-between": {
@@ -221,6 +261,12 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(244 63 94 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-slate-300": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(203 213 225 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-[#212530]": {
@@ -302,11 +348,6 @@
 	"font-bold": {
 		"style": {
 			"fontWeight": "700"
-		}
-	},
-	"font-semibold": {
-		"style": {
-			"fontWeight": "600"
 		}
 	},
 	"text-white": {

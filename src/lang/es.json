@@ -2,6 +2,8 @@
   "translation": {
     "IntroScreen_Start": "Empezar",
     "HaveAccount": "Ya tienes una cuenta? ",
+    "DontHaveAccount": "No tienes una cuenta? ",
+    "DontHaveAccountButton": "Regístrate",
     "Login": "Inicia Sesión",
     "Register": "Crear Cuenta con Email",
     "Email_Input": "Tu Email:",
@@ -14,6 +16,7 @@
     "PasswordConfirm_Placeholder": "*******",
     "PasswordConfirm_Error": "La contraseña no coincide",
     "Register_Button": "Registrarse",
+    "Login_Button": "Entrar",
     "Policy_Privacy": "Politica de Privacidad",
     "NamePlaceholder": "Nombre",
     "Continue": "Continuar",

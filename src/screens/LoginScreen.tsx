@@ -7,11 +7,10 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
-import CheckBox from "expo-checkbox";
 import { useTailwind } from "tailwind-rn";
 import { useTranslation } from "react-i18next";
 import Button from "../components/Button";
-import HaveAccount from "../components/HaveAccount";
+import {DontHaveAccount} from "../components/HaveAccount";
 import BackArrow from "../components/BackArrow";
 import React, { useState } from "react";
 import { Email_Input, Password_Input } from "../components/Inputs";
@@ -24,7 +23,6 @@ export default function RegisterScreen() {
 
   //Input Logic
   //Email
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [email, setEmail] = useState("");
   const emailState = (value: string) => setEmail(value);
   //Password
@@ -36,11 +34,11 @@ export default function RegisterScreen() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ScrollView style={tailwind("bg-[#212530] flex-1")}>
+      <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
         <KeyboardAvoidingView style={{ flex: 1 }} keyboardVerticalOffset={-150} behavior={"position"}>
           <BackArrow />
           <Text style={tailwind("text-white font-bold text-4xl pt-4 text-center w-64 self-center")}>
-            {t("Register")}
+            {t("Login")}
           </Text>
           {/* <Text style={tailwind("text-white font-bold text-4xl pt-4 text-center w-64 self-center")}>
             {Constants.manifest.extra.apiUrl}
@@ -59,16 +57,16 @@ export default function RegisterScreen() {
               state={passwordState}
               reference={passwordRef}
               error={t("Password_Error")}
-              focusref={confirmPasswordRef}
+
               confirm={false}
             />
           </View>
           <View style={tailwind("items-center mt-8")}>
             <Button
-              text={t("Register_Button")}
+              text={t("Login_Button")}
               function={() => navigation.navigate("ProfileCreatorScreen" as never)}
             />
-            <HaveAccount />
+            <DontHaveAccount />
           </View>
         </KeyboardAvoidingView>
       </ScrollView>

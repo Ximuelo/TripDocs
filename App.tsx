@@ -6,6 +6,7 @@ import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/
 
 import IntroScreen from "./src/screens/IntroScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
+import LoginScreen from "./src/screens/LoginScreen";
 
 import initLanguages from "./src/utils/Languages";
 import ProfileCreatorScreen from "./src/screens/ProfileCreatorScreen";
@@ -28,6 +29,7 @@ export default function App() {
         >
           <Stack.Screen name="Intro" component={IntroScreen} />
           <Stack.Screen name="Register" component={RegisterScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="ProfileCreatorScreen" component={ProfileCreatorScreen} />
         </Stack.Navigator>
       </NavigationContainer>
