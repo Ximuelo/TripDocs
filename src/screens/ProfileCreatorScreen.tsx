@@ -8,12 +8,14 @@ import { Profile } from "../components/Avatar/Avatar";
 import Button from "../components/Button";
 import { useTranslation } from "react-i18next";
 import Selector from "../components/Avatar/Selector";
+import { createProfile, getDocuments, getProfiles, user } from "../utils/Auth";
 
-export default function ProfileCreatorScreen() {
+export default function ProfileCreatorScreen({navigation}) {
   const tailwind = useTailwind();
   const { t } = useTranslation();
   const [name, setName] = useState("");
   const [skin,setSkin] = useState("skin_0")
+  // "skin_0|body1_0|mouth1|nose1|facialHair1|eyes1|hair3_0"
   const [body,setBody] = useState("body1_0")
   const [mouth,setMouth] = useState("mouth1")
   const [nose,setNose] = useState("nose1")
@@ -33,6 +35,18 @@ export default function ProfileCreatorScreen() {
     // console.log("test")
     setCharacters(skin+"|"+body+"|"+mouth+"|"+nose+"|"+facialHair+"|"+eyes+"|"+hair)
   },[skin,body, mouth, nose, facialHair, eyes, hair])
+
+  const continueButton = async() =>{
+    if(name==""){return}
+    let newProfile = await createProfile(name,characters)
+    console.log(newProfile)
+    let profiles = await getProfiles()
+    user.profiles=profiles['profiles']
+    user.selectedProfile=user.profiles[0]
+    let documents = await getDocuments()
+    user.documents=documents
+    navigation.navigate("HomeDrawer" as never, {} as never)
+  }
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -55,7 +69,7 @@ export default function ProfileCreatorScreen() {
           nose={nose} setNose={setNose} facialHair={facialHair} setFacialHair={setFacialHair} eyes={eyes}
           setEyes={setEyes} hair={hair} setHair={setHair}
           />
-          <Button text={t("Continue")} />
+          <Button text={t("Continue")} function={continueButton}/>
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>

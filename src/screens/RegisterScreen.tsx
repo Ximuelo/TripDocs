@@ -16,13 +16,18 @@ import BackArrow from "../components/BackArrow";
 import React, { useState } from "react";
 import { Email_Input, Password_Input } from "../components/Inputs";
 import { useNavigation } from "@react-navigation/native";
+import { getDocuments, getProfiles, login, register, user } from "../utils/Auth";
+import { Email_Validator, Password_Validator } from "../utils/InputController";
 
 export default function RegisterScreen() {
   const tailwind = useTailwind();
   const { t } = useTranslation();
   const navigation = useNavigation();
+  const [isDisabled, setIsDisabled] = useState(false);
 
   //Input Logic
+  //ErrorMSG
+  const [error, setError] = useState("")
   //Email
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [email, setEmail] = useState("");
@@ -38,6 +43,18 @@ export default function RegisterScreen() {
   const passwordRef = React.createRef<TextInput>();
   const confirmPasswordRef = React.createRef<TextInput>();
 
+  const registerButton = async() => {
+    setIsDisabled(true)
+    if(!Email_Validator(email) || password != confirmPassword || !Password_Validator(password) || toggleCheckBox==false) { return }
+    const registerResponse = await register(email,password)
+    if(registerResponse){
+      const loginResponse = await login(email,password)
+      navigation.navigate("ProfileCreatorScreen" as never)
+    } else {
+      navigation.navigate("Login" as never)
+    }
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
@@ -50,6 +67,7 @@ export default function RegisterScreen() {
             {Constants.manifest.extra.apiUrl}
           </Text> */}
           <View style={tailwind("ml-5 mr-5 mt-8")}>
+            {error!=""?<Text style={tailwind("ml-2 mr-2 text-rose-500 text-center")}>Error: {error}</Text>:<></>}
             <Email_Input
               text={t("Email_Input")}
               placeholder={t("Email_Placeholder")}
@@ -94,8 +112,9 @@ export default function RegisterScreen() {
           </View>
           <View style={tailwind("items-center mt-8")}>
             <Button
+            isDisabled={isDisabled}
               text={t("Register_Button")}
-              function={() => navigation.navigate("ProfileCreatorScreen" as never)}
+              function={() => registerButton()}
             />
             <HaveAccount />
           </View>

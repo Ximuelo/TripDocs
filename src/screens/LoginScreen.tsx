@@ -15,22 +15,51 @@ import BackArrow from "../components/BackArrow";
 import React, { useState } from "react";
 import { Email_Input, Password_Input } from "../components/Inputs";
 import { useNavigation } from "@react-navigation/native";
+import { Email_Validator, Password_Validator } from "../utils/InputController";
+import { auth, getDocuments, getProfiles, login, user } from "../utils/Auth";
 
 export default function RegisterScreen() {
   const tailwind = useTailwind();
   const { t } = useTranslation();
   const navigation = useNavigation();
+  const [isDisabled, setIsDisabled] = useState(false);
 
   //Input Logic
+  //ErrorMSG
+  const [error, setError] = useState("")
   //Email
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("xquintana@gmail.com");
   const emailState = (value: string) => setEmail(value);
   //Password
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("Hola1234.");
   const passwordState = (value: string) => setPassword(value);
 
   //refs
   const passwordRef = React.createRef<TextInput>();
+
+  const loginButton = async() => {
+    setIsDisabled(true)
+    if(!Email_Validator(email) || !Password_Validator(password)) { return }
+    const loginResponse = await login(email,password)
+    if(loginResponse){
+      setError("")
+      let profiles = await getProfiles()
+      
+      if(profiles['count']==0){
+        navigation.navigate("ProfileCreatorScreen" as never)
+      } else {
+        user.profiles=profiles['profiles']
+        user.selectedProfile=user.profiles[0]
+        let documents = await getDocuments()
+        user.documents=documents
+        navigation.navigate("TabConfig" as never)
+      }
+    } else {
+      // navigation.navigate("Login" as never)
+      setError(t("Login_ErrorMSG"))
+    }
+    setIsDisabled(false)
+  }
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -44,6 +73,7 @@ export default function RegisterScreen() {
             {Constants.manifest.extra.apiUrl}
           </Text> */}
           <View style={tailwind("ml-5 mr-5 mt-8")}>
+          {error!=""?<Text style={tailwind("ml-2 mr-2 text-rose-500 text-center")}>Error: {error}</Text>:<></>}
             <Email_Input
               text={t("Email_Input")}
               placeholder={t("Email_Placeholder")}
@@ -63,8 +93,11 @@ export default function RegisterScreen() {
           </View>
           <View style={tailwind("items-center mt-8")}>
             <Button
+              isDisabled={isDisabled}
               text={t("Login_Button")}
-              function={() => navigation.navigate("ProfileCreatorScreen" as never)}
+              function={() => {
+                loginButton()
+              }}
             />
             <DontHaveAccount />
           </View>

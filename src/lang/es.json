@@ -6,6 +6,8 @@
     "DontHaveAccountButton": "Regístrate",
     "Login": "Inicia Sesión",
     "Register": "Crear Cuenta con Email",
+    "Register_ErrorMSG": "Error en el registro",
+    "Login_ErrorMSG": "Error en el login",
     "Email_Input": "Tu Email:",
     "Email_Placeholder": "example@gmail.com",
     "Email_Error": "Email Invalido",
@@ -20,6 +22,18 @@
     "Policy_Privacy": "Politica de Privacidad",
     "NamePlaceholder": "Nombre",
     "Continue": "Continuar",
-    "AvatarOptions": ["Piel", "Cuerpo", "Boca", "Nariz", "Vello Facial", "Ojos", "Pelo"]
+    "AvatarOptions": ["Piel", "Cuerpo", "Boca", "Nariz", "Vello Facial", "Ojos", "Pelo"],
+    "Hello": "Hola",
+    "SearchText": "¿Que buscas hoy?",
+    "SearchPlaceholder": "Pasaporte COVID",
+    "CollectionOptions": ["Identificativos","Sanitarios","Transportes","Identificativos","Sanitarios","Transportes"],
+    "AddProfile": "Añadir Perfil",
+    "Language": "Idioma",
+    "Upgrade": "Mejorar",
+    "Logout": "Salir",
+    "Profile": "Perfil",
+    "Email": "Email",
+    "DocumentsCreated": "Documentos Creados",
+    "Account": "Cuenta"
   }
 }
