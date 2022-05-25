@@ -18,6 +18,10 @@ import DrawerContent from "./src/components/DrawerContent";
 import CreateDocumentScreen from "./src/screens/CreateDocumentScreen";
 import RequirementsScreen from "./src/screens/RequirementsScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import ViewDocumentScreen from "./src/screens/ViewDocumentScreen";
+import ProfileUpdateScreen from "./src/screens/ProfileUpdateScreen";
+import UpgradeScreen from "./src/screens/UpgradeScreen";
+import PrivacyPolicyScreen from "./src/screens/PrivacyPolicyScreen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -60,13 +64,17 @@ function StackConfig(){
             headerShown: false,
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
-          initialRouteName="Login"
+          initialRouteName="Intro"
         >
           <Stack.Screen name="Intro" component={IntroScreen}/>
           <Stack.Screen name="Register" component={RegisterScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="ProfileCreatorScreen" component={ProfileCreatorScreen} />
           <Stack.Screen name="TabConfig" component={TabConfig} />
+          <Stack.Screen name="ViewDocumentScreen" component={ViewDocumentScreen} />
+          <Stack.Screen name="ProfileUpdateScreen" component={ProfileUpdateScreen} />
+          <Stack.Screen name="UpgradeScreen" component={UpgradeScreen} />
+          <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} />
   </Stack.Navigator>
   )
 }
@@ -80,7 +88,8 @@ function TabConfig(){
     tabBarStyle: {
       borderRadius: 100,
       position: "absolute"
-    }
+    },
+    tabBarHideOnKeyboard: true
   }}
   initialRouteName="DrawerConfig">
     <Tab.Screen name="DrawerConfig" component={DrawerConfig} options={{
@@ -89,12 +98,12 @@ function TabConfig(){
         name="home-sharp" size={24} 
         color={focused?"#2D9CDB":"#BABABA"}
         />
-      )
+      ),
     }}/>
     <Tab.Screen name="CreateDocument" component={CreateDocumentScreen} options={{
       tabBarIcon: ({focused}) => (
         <Ionicons
-        name="ios-folder-open-sharp" size={24} 
+        name="add-circle" size={24} 
         color={focused?"#2D9CDB":"#BABABA"}
         />
       )

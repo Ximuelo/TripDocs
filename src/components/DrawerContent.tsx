@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
-import { Text, View } from "react-native";
+import { Alert, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useTailwind } from "tailwind-rn/dist";
 import { user } from "../utils/Auth";
@@ -26,14 +26,6 @@ export default function DrawerContent(){
         navigation.navigate("Home" as never, {} as never)
     }
     return(
-        <View style={tailwind("flex-1")}>
-            <Modal isVisible={languageDialog}>
-                <View style={tailwind("w-80 h-40 bg-[#212530] self-center")}>
-                    <Button text="Save" function={()=>{
-                        setLanguageDialog(false)
-                    }}/>
-                </View>
-            </Modal>
             <View style={tailwind("ml-8 mt-16 flex-col justify-between mb-16 flex-1")}>
                 <View>
                     <View style={tailwind("bg-white rounded-full overflow-hidden self-start")}>
@@ -55,27 +47,26 @@ export default function DrawerContent(){
                             </TouchableOpacity>
                         )
                     })}
-                    <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>navigation.navigate("ProfileCreatorScreen" as never)}>
+                    <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>{
+                        if(user.profiles.length>0 && user.subscription=="free"){
+                            Alert.alert("",t("FreeAccountError"))
+                        } else {
+                            navigation.navigate("ProfileCreatorScreen" as never)
+                        }
+                    }}>
                                 <Ionicons
                                 name="person-add" size={24} 
                                 color="#BABABA"
                                 />
                                 <Text style={tailwind("ml-2 text-white text-base")}>{t("AddProfile")}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>setLanguageDialog(true)}>
-                                <Ionicons
-                                name="language" size={24} 
-                                color="#BABABA"
-                                />
-                                <Text style={tailwind("ml-2 text-white text-base")}>{t("Language")}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>navigation.navigate("ProfileCreatorScreen" as never)}>
+                    {user.subscription=="free" && <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>navigation.navigate("UpgradeScreen" as never)}>
                                 <Ionicons
                                 name="rocket" size={24} 
                                 color="#BABABA"
                                 />
                                 <Text style={tailwind("ml-2 text-white text-base")}>{t("Upgrade")}</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity>}
                 </View>
                 <View>
                     <TouchableOpacity style={tailwind("flex-row items-center mt-2")} onPress={()=>navigation.navigate("Intro" as never)}>
@@ -87,6 +78,5 @@ export default function DrawerContent(){
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
     )
 }

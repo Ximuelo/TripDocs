@@ -285,7 +285,7 @@ const Options = (props: any) => {
         break;
         //HAIR====================
         case 6:
-          const hairs=["hair1","hair2","hair3","hair4","hair6","hair7","hair8","hair11","hair12","hair13","hair16","hair18","hair19","hair20"]
+          const hairs=["hair1","hair2","hair3","hair4","hair6","hair7","hair8","hair11","hair16","hair18","hair19","hair20"]
           return <View style={tailwind("items-center")}>
             <View style={tailwind("flex-row flex-wrap ml-4")}>
           {hairs.map((hair,index)=>{

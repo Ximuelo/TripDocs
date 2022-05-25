@@ -45,7 +45,7 @@ export default function RegisterScreen() {
 
   const registerButton = async() => {
     setIsDisabled(true)
-    if(!Email_Validator(email) || password != confirmPassword || !Password_Validator(password) || toggleCheckBox==false) { return }
+    if(!Email_Validator(email) || password != confirmPassword || !Password_Validator(password) || toggleCheckBox==false) {setIsDisabled(true); return }
     const registerResponse = await register(email,password)
     if(registerResponse){
       const loginResponse = await login(email,password)
@@ -105,6 +105,7 @@ export default function RegisterScreen() {
                   tailwind("text-lg underline pl-2"),
                   tailwind(toggleCheckBox ? "text-white" : "text-rose-500"),
                 ]}
+                onPress={()=>navigation.navigate("PrivacyPolicyScreen" as never)}
               >
                 *{t("Policy_Privacy")}
               </Text>

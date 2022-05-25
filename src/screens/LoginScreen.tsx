@@ -28,26 +28,31 @@ export default function RegisterScreen() {
   //ErrorMSG
   const [error, setError] = useState("")
   //Email
-  const [email, setEmail] = useState("xquintana@gmail.com");
+  const [email, setEmail] = useState("");
   const emailState = (value: string) => setEmail(value);
   //Password
-  const [password, setPassword] = useState("Hola1234.");
+  const [password, setPassword] = useState("");
   const passwordState = (value: string) => setPassword(value);
 
   //refs
   const passwordRef = React.createRef<TextInput>();
 
   const loginButton = async() => {
-    setIsDisabled(true)
-    if(!Email_Validator(email) || !Password_Validator(password)) { return }
+    // setIsDisabled(true)
+    // console.log(email)
+    
+    if(!Email_Validator(email) || !Password_Validator(password)) {setIsDisabled(false); return }
     const loginResponse = await login(email,password)
+    console.log(loginResponse)
     if(loginResponse){
+      setIsDisabled(false)
       setError("")
       let profiles = await getProfiles()
       
       if(profiles['count']==0){
         navigation.navigate("ProfileCreatorScreen" as never)
       } else {
+        setIsDisabled(false)
         user.profiles=profiles['profiles']
         user.selectedProfile=user.profiles[0]
         let documents = await getDocuments()
@@ -55,7 +60,7 @@ export default function RegisterScreen() {
         navigation.navigate("TabConfig" as never)
       }
     } else {
-      // navigation.navigate("Login" as never)
+      setIsDisabled(false)
       setError(t("Login_ErrorMSG"))
     }
     setIsDisabled(false)

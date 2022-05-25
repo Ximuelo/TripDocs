@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import Button from "../components/Button";
 import HaveAccount from "../components/HaveAccount";
+import { useEffect } from "react";
 
 export default function IntroScreen() {
   const tailwind = useTailwind();
@@ -13,6 +14,13 @@ export default function IntroScreen() {
 
   //Navigation
   const navigation = useNavigation();
+
+  //Prevent going back
+  useEffect(()=>{
+    navigation.addListener('beforeRemove', (e)=>{
+      e.preventDefault()
+    })
+  })
 
   return (
     <ImageBackground source={require("../assets/intro.png")} resizeMode="cover" style={tailwind("flex-1")}>

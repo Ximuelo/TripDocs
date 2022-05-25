@@ -8,23 +8,25 @@ import { Profile } from "../components/Avatar/Avatar";
 import Button from "../components/Button";
 import { useTranslation } from "react-i18next";
 import Selector from "../components/Avatar/Selector";
-import { createProfile, getDocuments, getProfiles, user } from "../utils/Auth";
-import { useIsFocused } from "@react-navigation/native";
+import { createProfile, getDocuments, getProfiles, updateProfile, user } from "../utils/Auth";
+import { useNavigation } from "@react-navigation/native";
 
-export default function ProfileCreatorScreen({navigation}) {
+export default function ProfileUpdateScreen(props) {
+  const navigation = useNavigation()
+  const parameters = props.route.params;
   const tailwind = useTailwind();
   const { t } = useTranslation();
-  const isFocused = useIsFocused();
-  const [name, setName] = useState("");
-  const [skin,setSkin] = useState("skin_0")
+  const _id=user.selectedProfile['_id']
+  const [name, setName] = useState(user.selectedProfile['name']);
+  const [skin,setSkin] = useState(user.selectedProfile['characters'].split("|")[0])
   // "skin_0|body1_0|mouth1|nose1|facialHair1|eyes1|hair3_0"
-  const [body,setBody] = useState("body1_0")
-  const [mouth,setMouth] = useState("mouth1")
-  const [nose,setNose] = useState("nose1")
-  const [facialHair,setFacialHair]=useState("facialHair1")
-  const [eyes,setEyes]=useState("eyes1")
-  const [hair,setHair] = useState("hair3_0")
-  const [characters, setCharacters] = useState(skin+"|"+body+"|"+mouth+"|"+nose+"|"+facialHair+"|"+eyes+"|"+hair);
+  const [body,setBody] = useState(user.selectedProfile['characters'].split("|")[1])
+  const [mouth,setMouth] = useState(user.selectedProfile['characters'].split("|")[2])
+  const [nose,setNose] = useState(user.selectedProfile['characters'].split("|")[3])
+  const [facialHair,setFacialHair]=useState(user.selectedProfile['characters'].split("|")[4])
+  const [eyes,setEyes]=useState(user.selectedProfile['characters'].split("|")[5])
+  const [hair,setHair] = useState(user.selectedProfile['characters'].split("|")[6])
+  const [characters, setCharacters] = useState(user.selectedProfile['characters']);
 
   const nameRef = React.createRef<TextInput>();
 
@@ -40,14 +42,14 @@ export default function ProfileCreatorScreen({navigation}) {
 
   const continueButton = async() =>{
     if(name==""){return}
-    let newProfile = await createProfile(name,characters)
-    // console.log(newProfile)
+    let updateProfileD = await updateProfile(_id,name,characters)
     let profiles = await getProfiles()
     user.profiles=profiles['profiles']
-    user.selectedProfile=user.profiles[0]
+    // console.log(updateProfileD)
+    user.selectedProfile=updateProfileD['profile']
     let documents = await getDocuments()
     user.documents=documents
-    navigation.navigate("TabConfig" as never, {} as never)
+    navigation.navigate("DrawerConfig" as never, {} as never)
   }
 
   return (

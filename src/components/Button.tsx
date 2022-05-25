@@ -21,3 +21,17 @@ export default function Button(props: any) {
     </TouchableOpacity>
   );
 }
+
+export function ButtonExtra(props: any) {
+  const tailwind = useTailwind();
+
+  return (
+    <TouchableOpacity
+      disabled={props.isDisabled}
+      onPress={props.function}
+      style={tailwind("p-3 w-2/3 rounded-2xl self-center "+props.additionalStyle)}
+    >
+      <Text style={tailwind("text-white text-base text-center")}>{props.text}</Text>
+    </TouchableOpacity>
+  );
+}
