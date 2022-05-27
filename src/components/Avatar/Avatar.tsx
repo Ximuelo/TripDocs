@@ -28,22 +28,13 @@ export function Profile(props: any) {
   const nose = characters[3];
   //Facial Hair
   const facialHair = characters[4];
-<<<<<<< HEAD
-  const facialHairColorIndex = parseInt(facialHair.split("_")[1]);
-  const facialHairType = facialHair.split("_")[0];
-  const facialHairColor = PCO.hairColors[facialHairColorIndex];
-=======
->>>>>>> dev2
   //Eyes
   const eyes = characters[5];
   //Hair
   const hair = characters[6];
-<<<<<<< HEAD
-=======
   const hairColorIndex = parseInt(hair.split("_")[1]);
   const hairType = hair.split("_")[0];
   const hairColor = PCO.hairColors[hairColorIndex];
->>>>>>> dev2
 
   return (
     <Svg style={tailwind(style)} viewBox="0 0 64 64">
@@ -51,15 +42,9 @@ export function Profile(props: any) {
       <Body value={bodyType} color={bodyColor} />
       <Mouth value={mouth} />
       <Nose value={nose} color={skinColor} />
-<<<<<<< HEAD
-      <FacialHair value={facialHairType} color={facialHairColor} />
-      <Eyes value={eyes} />
-      <Hair value={hair} color={facialHairColor} />
-=======
       <FacialHair value={facialHair} color={hairColor} />
       <Eyes value={eyes} />
       <Hair value={hairType} color={hairColor} />
->>>>>>> dev2
     </Svg>
   );
 }

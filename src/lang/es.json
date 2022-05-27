@@ -2,36 +2,22 @@
   "translation": {
     "IntroScreen_Start": "Empezar",
     "HaveAccount": "Ya tienes una cuenta? ",
-<<<<<<< HEAD
-    "Login": "Inicia Sesión",
-    "Register": "Crear Cuenta con Email",
-=======
     "DontHaveAccount": "No tienes una cuenta? ",
     "DontHaveAccountButton": "Regístrate",
     "Login": "Inicia Sesión",
     "Register": "Crear Cuenta con Email",
     "Register_ErrorMSG": "Error en el registro",
     "Login_ErrorMSG": "Error en el login",
->>>>>>> dev2
     "Email_Input": "Tu Email:",
     "Email_Placeholder": "example@gmail.com",
     "Email_Error": "Email Invalido",
     "Password_Input": "Tu Contraseña:",
     "Password_Placeholder": "*******",
-<<<<<<< HEAD
-    "Password_Error": "La contraseña debe tener al menos 8 caracteres, 1 minuscula, 1 mayuscula y 1 caracter especial",
-=======
     "Password_Error": "La contraseña debe tener al menos 8 caracteres, 1 minúscula, 1 mayúscula y 1 caracter especial",
->>>>>>> dev2
     "PasswordConfirm_Input": "Confirma Tu Contraseña:",
     "PasswordConfirm_Placeholder": "*******",
     "PasswordConfirm_Error": "La contraseña no coincide",
     "Register_Button": "Registrarse",
-<<<<<<< HEAD
-    "Policy_Privacy": "Politica de Privacidad",
-    "NamePlaceholder": "Nombre",
-    "Continue": "Continuar"
-=======
     "Login_Button": "Entrar",
     "Policy_Privacy": "Politica de Privacidad",
     "NamePlaceholder": "Nombre",
@@ -126,6 +112,5 @@
       "Las aplicaciones pueden contener enlaces a sitios web, productos y servicios de terceros. También pueden usar u ofrecer productos o servicios de terceros. La recopilación de datos por parte de terceros, al ingresar datos sobre ubicaciones geográficas o detalles de contacto, se guiará por sus respectivos políticas de privacidad. Le recomendamos que consulte las políticas de privacidad de dichos terceros."
     ],
     "Loading": "Cargando..."
->>>>>>> dev2
   }
 }

@@ -3,16 +3,6 @@ import utilities from "./tailwind.json";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
-<<<<<<< HEAD
-
-import IntroScreen from "./src/screens/IntroScreen";
-import RegisterScreen from "./src/screens/RegisterScreen";
-
-import initLanguages from "./src/utils/Languages";
-import ProfileCreatorScreen from "./src/screens/ProfileCreatorScreen";
-
-const Stack = createStackNavigator();
-=======
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from "@expo/vector-icons";
@@ -36,7 +26,6 @@ import PrivacyPolicyScreen from "./src/screens/PrivacyPolicyScreen";
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
->>>>>>> dev2
 
 export default function App() {
   //Languages
@@ -45,27 +34,11 @@ export default function App() {
   return (
     <TailwindProvider utilities={utilities}>
       <NavigationContainer>
-<<<<<<< HEAD
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          }}
-          initialRouteName="ProfileCreatorScreen"
-        >
-          <Stack.Screen name="Intro" component={IntroScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
-          <Stack.Screen name="ProfileCreatorScreen" component={ProfileCreatorScreen} />
-        </Stack.Navigator>
-=======
         <StackConfig />
->>>>>>> dev2
       </NavigationContainer>
     </TailwindProvider>
   );
 }
-<<<<<<< HEAD
-=======
 
 function DrawerConfig(){
   return(
@@ -153,4 +126,3 @@ function TabConfig(){
     }}/>
   </Tab.Navigator>)
 }
->>>>>>> dev2

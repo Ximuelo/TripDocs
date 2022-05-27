@@ -1,11 +1,5 @@
 {
   "translation": {
-<<<<<<< HEAD
-    "IntroScreen_Start": "Get Started",
-    "HaveAccount": "Already have an account? ",
-    "Login": "Log In",
-    "Register": "Create Account with Email"
-=======
     "IntroScreen_Start": "Start",
     "HaveAccount": "Already have an Account? ",
     "DontHaveAccount": "Don't have an Account? ",
@@ -121,6 +115,5 @@
     ],
     "Loading": "Loading..."
   
->>>>>>> dev2
   }
 }

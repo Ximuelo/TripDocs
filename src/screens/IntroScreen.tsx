@@ -5,10 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import Button from "../components/Button";
 import HaveAccount from "../components/HaveAccount";
-<<<<<<< HEAD
-=======
 import { useEffect } from "react";
->>>>>>> dev2
 
 export default function IntroScreen() {
   const tailwind = useTailwind();
@@ -18,8 +15,6 @@ export default function IntroScreen() {
   //Navigation
   const navigation = useNavigation();
 
-<<<<<<< HEAD
-=======
   //Prevent going back
   useEffect(()=>{
     navigation.addListener('beforeRemove', (e)=>{
@@ -27,7 +22,6 @@ export default function IntroScreen() {
     })
   })
 
->>>>>>> dev2
   return (
     <ImageBackground source={require("../assets/intro.png")} resizeMode="cover" style={tailwind("flex-1")}>
       <LinearGradient colors={["rgba(14, 165, 233,0.12)", "rgba(14, 165, 233,0.12)"]} style={tailwind("flex-1")}>

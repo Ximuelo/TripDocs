@@ -16,26 +16,18 @@ import BackArrow from "../components/BackArrow";
 import React, { useState } from "react";
 import { Email_Input, Password_Input } from "../components/Inputs";
 import { useNavigation } from "@react-navigation/native";
-<<<<<<< HEAD
-=======
 import { getDocuments, getProfiles, login, register, user } from "../utils/Auth";
 import { Email_Validator, Password_Validator } from "../utils/InputController";
->>>>>>> dev2
 
 export default function RegisterScreen() {
   const tailwind = useTailwind();
   const { t } = useTranslation();
   const navigation = useNavigation();
-<<<<<<< HEAD
-
-  //Input Logic
-=======
   const [isDisabled, setIsDisabled] = useState(false);
 
   //Input Logic
   //ErrorMSG
   const [error, setError] = useState("")
->>>>>>> dev2
   //Email
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [email, setEmail] = useState("");
@@ -51,11 +43,6 @@ export default function RegisterScreen() {
   const passwordRef = React.createRef<TextInput>();
   const confirmPasswordRef = React.createRef<TextInput>();
 
-<<<<<<< HEAD
-  return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ScrollView style={tailwind("bg-[#212530] flex-1")}>
-=======
   const registerButton = async() => {
     setIsDisabled(true)
     if(!Email_Validator(email) || password != confirmPassword || !Password_Validator(password) || toggleCheckBox==false) {setIsDisabled(true); return }
@@ -71,7 +58,6 @@ export default function RegisterScreen() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
->>>>>>> dev2
         <KeyboardAvoidingView style={{ flex: 1 }} keyboardVerticalOffset={-150} behavior={"position"}>
           <BackArrow />
           <Text style={tailwind("text-white font-bold text-4xl pt-4 text-center w-64 self-center")}>
@@ -81,10 +67,7 @@ export default function RegisterScreen() {
             {Constants.manifest.extra.apiUrl}
           </Text> */}
           <View style={tailwind("ml-5 mr-5 mt-8")}>
-<<<<<<< HEAD
-=======
             {error!=""?<Text style={tailwind("ml-2 mr-2 text-rose-500 text-center")}>Error: {error}</Text>:<></>}
->>>>>>> dev2
             <Email_Input
               text={t("Email_Input")}
               placeholder={t("Email_Placeholder")}
@@ -122,10 +105,7 @@ export default function RegisterScreen() {
                   tailwind("text-lg underline pl-2"),
                   tailwind(toggleCheckBox ? "text-white" : "text-rose-500"),
                 ]}
-<<<<<<< HEAD
-=======
                 onPress={()=>navigation.navigate("PrivacyPolicyScreen" as never)}
->>>>>>> dev2
               >
                 *{t("Policy_Privacy")}
               </Text>
@@ -133,14 +113,9 @@ export default function RegisterScreen() {
           </View>
           <View style={tailwind("items-center mt-8")}>
             <Button
-<<<<<<< HEAD
-              text={t("Register_Button")}
-              function={() => navigation.navigate("ProfileCreatorScreen" as never)}
-=======
             isDisabled={isDisabled}
               text={t("Register_Button")}
               function={() => registerButton()}
->>>>>>> dev2
             />
             <HaveAccount />
           </View>

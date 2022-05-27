@@ -12,15 +12,6 @@
     "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@react-navigation/native": "^6.0.8",
-    "@react-navigation/stack": "^6.1.1",
-    "dotenv": "^16.0.0",
-    "expo": "~44.0.0",
-    "expo-checkbox": "~2.0.0",
-    "expo-linear-gradient": "~11.0.3",
-    "expo-status-bar": "~1.2.0",
-=======
     "@react-native-picker/picker": "2.2.1",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/drawer": "^6.4.1",
@@ -34,7 +25,6 @@
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.7",
->>>>>>> dev2
     "i18next": "^21.6.12",
     "react": "17.0.1",
     "react-dom": "17.0.1",

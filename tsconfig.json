@@ -1,13 +1,8 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-<<<<<<< HEAD
-    "strict": true,
-    "strictNullChecks": false
-=======
     "strict": false,
     "strictNullChecks": false,
     "checkJs": false
->>>>>>> dev2
   }
 }

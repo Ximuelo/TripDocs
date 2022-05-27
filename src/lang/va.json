@@ -1,11 +1,6 @@
 {
   "translation": {
     "IntroScreen_Start": "Començar",
-<<<<<<< HEAD
-    "HaveAccount": "Ya tens un compte? ",
-    "Login": "Iniciar Sessió",
-    "Register": "Crear Compte amb Email"
-=======
     "HaveAccount": "Ja tens un compte? ",
     "DontHaveAccount": "No tens un compte? ",
     "DontHaveAccountButton": "Registra't",
@@ -121,6 +116,5 @@
     ],
     "Loading": "Carregant..."
   
->>>>>>> dev2
   }
 }
