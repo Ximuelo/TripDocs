@@ -12,6 +12,7 @@
     "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
   },
   "dependencies": {
+<<<<<<< HEAD
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
     "dotenv": "^16.0.0",
@@ -19,12 +20,34 @@
     "expo-checkbox": "~2.0.0",
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
+=======
+    "@react-native-picker/picker": "2.2.1",
+    "@react-navigation/bottom-tabs": "^6.3.1",
+    "@react-navigation/drawer": "^6.4.1",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/stack": "^6.1.1",
+    "@stripe/stripe-react-native": "0.2.3",
+    "dotenv": "^16.0.0",
+    "expo": "~44.0.0",
+    "expo-checkbox": "~2.0.0",
+    "expo-image-picker": "~12.0.1",
+    "expo-linear-gradient": "~11.0.3",
+    "expo-status-bar": "~1.2.0",
+    "expo-updates": "~0.11.7",
+>>>>>>> dev2
     "i18next": "^21.6.12",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-i18next": "^11.15.5",
     "react-native": "0.64.3",
+<<<<<<< HEAD
     "react-native-gesture-handler": "~2.1.0",
+=======
+    "react-native-calendars": "^1.1284.0",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-modal": "^13.0.1",
+    "react-native-reanimated": "~2.3.1",
+>>>>>>> dev2
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-svg": "^12.3.0",

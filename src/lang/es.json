@@ -2,20 +2,130 @@
   "translation": {
     "IntroScreen_Start": "Empezar",
     "HaveAccount": "Ya tienes una cuenta? ",
+<<<<<<< HEAD
     "Login": "Inicia Sesión",
     "Register": "Crear Cuenta con Email",
+=======
+    "DontHaveAccount": "No tienes una cuenta? ",
+    "DontHaveAccountButton": "Regístrate",
+    "Login": "Inicia Sesión",
+    "Register": "Crear Cuenta con Email",
+    "Register_ErrorMSG": "Error en el registro",
+    "Login_ErrorMSG": "Error en el login",
+>>>>>>> dev2
     "Email_Input": "Tu Email:",
     "Email_Placeholder": "example@gmail.com",
     "Email_Error": "Email Invalido",
     "Password_Input": "Tu Contraseña:",
     "Password_Placeholder": "*******",
+<<<<<<< HEAD
     "Password_Error": "La contraseña debe tener al menos 8 caracteres, 1 minuscula, 1 mayuscula y 1 caracter especial",
+=======
+    "Password_Error": "La contraseña debe tener al menos 8 caracteres, 1 minúscula, 1 mayúscula y 1 caracter especial",
+>>>>>>> dev2
     "PasswordConfirm_Input": "Confirma Tu Contraseña:",
     "PasswordConfirm_Placeholder": "*******",
     "PasswordConfirm_Error": "La contraseña no coincide",
     "Register_Button": "Registrarse",
+<<<<<<< HEAD
     "Policy_Privacy": "Politica de Privacidad",
     "NamePlaceholder": "Nombre",
     "Continue": "Continuar"
+=======
+    "Login_Button": "Entrar",
+    "Policy_Privacy": "Politica de Privacidad",
+    "NamePlaceholder": "Nombre",
+    "Continue": "Continuar",
+    "AvatarOptions": ["Piel", "Cuerpo", "Boca", "Nariz", "Vello Facial", "Ojos", "Pelo"],
+    "Hello": "Hola",
+    "SearchText": "¿Que buscas hoy?",
+    "SearchPlaceholder": "Pasaporte COVID",
+    "CollectionOptions": ["Identificativos","Sanitarios","Transportes","Alojamientos","Seguros","Eventos","Otros"],
+    "AddProfile": "Añadir Perfil",
+    "Language": "Idioma",
+    "Upgrade": "Mejorar",
+    "Logout": "Salir",
+    "Profile": "Perfil",
+    "Email": "Email",
+    "DocumentsCreated": "Documentos Creados",
+    "Account": "Cuenta",
+    "FreeAccountError": "No puedes crear mas de 1 perfil con el plan Free",
+    "ExpireTitleMSG":"Documento Caducado",
+    "ExpireMSG": "El documento ha caducado o esta apunto de caducar",
+    "DeleteConfirmation": "¿Estas seguro de querer borrar este Perfil?",
+    "DeleteDocumentConfirmation": "¿Estas seguro de querer borrar este Documento?",
+    "Yes": "Si",
+    "DocumentPlaceholder":"DNI",
+    "Save":"Guardar",
+    "Update":"Actualizar",
+    "All":"Todos",
+    "CardField": "Tarjeta:",
+    "Payment": "Pago",
+    "PaymentError": "Ha surgido un error con el pago.",
+    "PaymentSuccesful": "Pago completado.",
+    "PaymentMissingInfo": "Porfavor completa los detalles de la tarjeta y el email.",
+    "Requirements": "Requerimientos",
+    "To": "Hacia",
+    "Show": "Mostrar",
+    "Duration": "Duracion",
+    "None": "Ninguna",
+    "NotAvailable": "No disponible",
+    "PrivacyPolicy": "Políticas de Privacidad",
+    "Text_PrivacyPolicy":[
+      "Recolección y procesamiento de datos personales",
+      "Los datos personales son datos que se pueden utilizar para identificar o contactar a un individuo. 'TripDocs' puede solicitar datos personales de los usuarios al acceder a aplicaciones de la empresa o de otras empresas afiliadas, así como la posibilidad de que entre estas empresas dichos datos puedan ser compartidos para mejorar los productos y servicios ofrecidos. Si no se proporciona dicha información personal, en muchos casos no podremos proporcionar los productos o servicios solicitados. Estos son algunos ejemplos de las categorías de datos personales que 'TripDocs' puede recopilar y las finalidades para lo cual podrá tratar dichos datos.",
+
+      "¿Qué datos personales se pueden recopilar?",
+      "- Cuando crea una identificación, solicita un crédito comercial, compra un producto, descarga una actualización de software, se recopilan diferentes datos, como el nombre, la dirección postal, el número de teléfono, la dirección de correo electrónico o los detalles de la tarjeta de crédito",
+      "- Cuando comparte contenido con familiares y amigos o invita a otros a participar en servicios o foros, podemos recopilar información que proporcionamos sobre esas personas, como su nombre, dirección, dirección de correo electrónico y número de teléfono. Estos datos serán utilizados para cumplir con sus pedidos, para mostrarle el producto o servicio correspondiente o para combatir el fraude.",
+
+      "Finalidad del tratamiento de datos personales",
+      "'TripDocs' puede utilizar los datos personales recopilados para:",
+      "- Los datos personales recopilados nos permiten mantenerlo informado sobre los últimos productos, las actualizaciones de software disponibles y los próximos eventos",
+
+      "- Los datos personales también se utilizan para ayudar a desarrollar, mejorar, administrar, proporcionar y mejorar productos, servicios, contenido y publicidad, y para prevenir pérdidas y fraudes",
+
+      "- Los datos personales podrán ser utilizados para verificar la identidad, asistir en la identificación de los usuarios y decidir sobre los servicios apropiados.",
+
+      "- También utilizamos estos datos personales para fines internos, incluidas auditorías, análisis de datos y encuestas, para mejorar productos, servicios y comunicaciones con los clientes",
+      "- Si participa en un sorteo, concurso o promoción, los datos proporcionados podrán ser utilizados para administrar estos programas.",
+
+      "Recogida y tratamiento de datos no personales",
+      "TripDocs también recopilará datos de una manera que, por sí misma, no se puede asociar directamente con una persona específica. Estos datos no personales pueden recopilarse, procesarse, transferirse y publicarse para cualquier propósito. Estos son algunos ejemplos de los tipos de datos no personales que TripDocs puede recopilar y los fines para los que se procesan:",
+
+      "- Datos como ocupación, idioma, código postal, identificador único de dispositivo, etc. para comprender mejor el comportamiento de nuestros clientes y mejorar nuestros productos, servicios y publicidad.",
+
+      "- Datos sobre cómo se utilizan ciertos servicios, incluidas las consultas de búsqueda. Esta información se puede utilizar para aumentar la relevancia de los resultados proporcionados por los servicios ofrecidos",
+
+      "- Datos sobre cómo utiliza su dispositivo y sus aplicaciones para facilitar a los desarrolladores la mejora de esas aplicaciones. Si combinamos datos no personales con datos personales, los datos combinados se tratarán como datos personales mientras sigan siéndolo. conjunto.",
+      
+      "Divulgación de terceros",
+      "De vez en cuando, 'TripDocs' puede proporcionar ciertos datos personales a socios estratégicos que trabajan con nosotros para proporcionar productos y servicios o ayudarnos en nuestras actividades de marketing. Los datos no se compartirán con terceros para sus propios fines de marketing" ,
+
+      
+      "Proveedores de servicio",
+      "TripDocs compartirá datos personales con empresas dedicadas, entre otras actividades, a proporcionar servicios de procesamiento de datos, otorgar crédito, procesar pedidos de clientes, presentar sus productos, mejorar los datos de los clientes, brindar servicios al cliente, evaluar el interés de los clientes en productos y servicios y realizar investigación de clientes o encuestas de satisfacción del cliente.",
+
+      "Otros terceros",
+      "Es posible que 'TripDocs' pueda divulgar datos personales por orden legal, en el contexto de un proceso judicial o a solicitud de una autoridad pública, tanto dentro como fuera de su país de residencia. Asimismo, la información personal puede ser publicada si sea ​​necesario o conveniente por razones de seguridad nacional, para cumplir con la legislación vigente o por otras razones relevantes de orden público.",
+
+      "Protección de datos personales",
+      "'TripDocs' garantizará la protección de los datos personales mediante el cifrado durante el tráfico y, para los datos alojados en las instalaciones, mediante medidas de seguridad física. Al utilizar determinados productos, servicios o aplicaciones o publicar opiniones en foros, salas de chat o redes sociales, el el contenido y los datos personales compartidos serán visibles para otros usuarios, quienes tendrán la posibilidad de leerlos, compilarlos o utilizarlos. Usted es responsable de los datos personales que distribuya o proporcione en estos casos.",
+      "Integridad y conservación de los datos personales",
+      "'TripDocs' se asegurará de que la exactitud y la calidad de los datos personales se conserven durante el tiempo necesario para cumplir con los fines para los que fueron recopilados, a menos que la ley exija que se conserven por más tiempo",
+
+      "Acceso a datos personales",
+      "Con respecto a los datos personales que tenemos, 'TripDocs' le ofrece acceso a ellos para cualquier propósito, incluidas las solicitudes de rectificación si son incorrectos o la eliminación si no estamos obligados a conservarlos por ley o por motivos comerciales legítimos. Nos reservamos el derecho a no procesar solicitudes que sean inapropiadas o vejatorias, que atenten contra la privacidad de terceros, que sean impracticables o para las cuales la ley local no exija un derecho de acceso. Las solicitudes de acceso, corrección o supresión pueden enviarse a nuestra dirección Carrer del Rei En Jaume I, 2, 46470 Catarroja, Valencia o cuenta de correo electrónico support@visoft.com.",
+
+      "Los niños y la educación",
+      "'TripDocs' es consciente de la necesidad de precauciones adicionales para preservar la privacidad y seguridad de los menores que utilizan las aplicaciones y de requerir el consentimiento de los padres si son menores de la edad mínima requerida por la ley (en España, 14 años). Si los datos personales tienen se ha recopilado de un niño menor de 14 años, sin el consentimiento necesario, la información debe eliminarse lo antes posible",
+
+      "Servicios de rastreo",
+      "Para proporcionar servicios basados ​​en la ubicación, 'TripDocs' puede recopilar, usar y compartir datos de ubicación precisos, incluida la ubicación geográfica en tiempo real de su computadora o dispositivo. A menos que nos dé su consentimiento, estos datos de ubicación se recopilan de forma anónima para que no puedan se utilizará para identificarlo personalmente, y se utilizará para proporcionar y mejorar sus productos y servicios basados ​​en la ubicación",
+      "Sitios web y servicios de terceros",
+      "Las aplicaciones pueden contener enlaces a sitios web, productos y servicios de terceros. También pueden usar u ofrecer productos o servicios de terceros. La recopilación de datos por parte de terceros, al ingresar datos sobre ubicaciones geográficas o detalles de contacto, se guiará por sus respectivos políticas de privacidad. Le recomendamos que consulte las políticas de privacidad de dichos terceros."
+    ],
+    "Loading": "Cargando..."
+>>>>>>> dev2
   }
 }
