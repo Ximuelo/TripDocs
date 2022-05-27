@@ -8,13 +8,13 @@ import "dotenv/config";
 // const api_url = process.env.API_URL;
 
 export default {
-    "name": "tripdocs",
-    "slug": "tripdocs",
+    "name": "TripDocs",
+    "slug": "TripDocs-final",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/logo.png",
     "splash": {
-        "image": "./assets/splash.png",
+        "image": "./assets/splash2.png",
         "resizeMode": "contain",
         "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@ export default {
     },
     "android": {
         "adaptiveIcon": {
-            "foregroundImage": "./assets/adaptive-icon.png",
+            "foregroundImage": "./src/assets/logo.png",
             "backgroundColor": "#FFFFFF"
         },
         "package": "com.xiqufe.tripdocs"

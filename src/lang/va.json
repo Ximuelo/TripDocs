@@ -113,7 +113,8 @@
       "Pàgines web i serveis de tercers",
       "Les aplicacions poden contindre enllaços a pàgines web, productes i serveis de tercers. També poden utilitzar o oferir productes o serveis de tercers. La recollida de dades per part de tercers, introduint de dades sobre ubicacions geogràfiques o dades de contacte, es guiarà per les seues respectives polítiques de privacitat. Li recomanem consultar les polítiques de privacitat d'aqueixos tercers."
 
-    ]
+    ],
+    "Loading": "Carregant..."
   
   }
 }

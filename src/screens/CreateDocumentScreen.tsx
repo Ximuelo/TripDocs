@@ -13,6 +13,7 @@ import { createDocument, getDocuments, user } from "../utils/Auth";
 export default function CreateDocumentScreen(){
     const tailwind = useTailwind()
     const { t, i18n } = useTranslation();
+    const isFocused = useIsFocused();
     const navigation = useNavigation()
     const [name,setName] = useState("")
     const [image,setImage] = useState(null)
@@ -20,15 +21,27 @@ export default function CreateDocumentScreen(){
     const CollectionOptions = t("CollectionOptions",  { returnObjects: true })
     const [collectionIndex, setCollectionIndex] = useState(0)
     const [date,setDate]=useState(new Date().toISOString().split('T')[0])
-    const isFocused = useIsFocused();
     const [isDisabled, setIsDisabled] = useState(false);
 
     const nameRef = React.createRef<TextInput>();
 
     useEffect(() => {
-      //Ref to the name input when page loads
-      nameRef.current?.focus();
-    });
+        const unsubscribe = navigation.addListener('focus', () => {
+          console.log('Refreshed!');
+          setName("")
+          setImage(null)
+          setImageBase64("")
+          setCollectionIndex(0)
+          setDate(new Date().toISOString().split('T')[0])
+          setIsDisabled(false)
+        });
+        return unsubscribe;
+      }, [navigation]);
+
+    // useEffect(() => {
+    //   //Ref to the name input when page loads
+    //   nameRef.current?.focus();
+    // });
 
     let imageStyle = "ml-2 mt-2 mr-2 h-80 rounded-xl";
     // if(i)
@@ -84,8 +97,16 @@ export default function CreateDocumentScreen(){
             <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
                 <View style={tailwind("flex-row items-center justify-between")}>
                     <BackArrow />
-                    <TextInput style={tailwind("mt-14 text-white font-bold text-4xl")} placeholder={t("DocumentPlaceholder")}
-                    maxLength={15} value={name} onChangeText={setName} multiline={false} ref={nameRef}/>
+                    <View style={tailwind("flex-row items-end")}>
+                        <TextInput style={tailwind("mt-14 text-white font-bold text-4xl")} placeholder={t("DocumentPlaceholder")}
+                        maxLength={12} value={name} onChangeText={setName} multiline={false} textAlignVertical={'top'} ref={nameRef}/>
+                        <Ionicons
+                        name="pencil" size={24} color="white"
+                        style={tailwind("ml-2 mb-3")}
+                        onPress={() => {
+                            nameRef.current?.focus();
+                        }}/>
+                    </View>
                     <View style={{width:32}}></View>
                 </View>
                 <ImageBackground source={{uri: image}} style={tailwind(imageStyle)} imageStyle={tailwind("ml-2 mt-2 mr-2 h-80 rounded-xl justify-center")}>

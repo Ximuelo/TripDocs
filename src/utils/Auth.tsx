@@ -3,7 +3,7 @@ export const api = {
 }
 
 export const http = {
-    ip: "http://51.103.128.156/imgs"
+    ip: "http://51.103.128.156:8080/imgs"
 }
 
 export const auth = {
@@ -16,6 +16,7 @@ export const user = {
   profiles: "",
   selectedProfile:"",
   documents:""
+  
 }
 
 export const deleProfile = async() => {

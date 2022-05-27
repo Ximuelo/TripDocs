@@ -6,6 +6,7 @@ import {
   TextInput,
   ScrollView,
   KeyboardAvoidingView,
+  Modal,
 } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { useTranslation } from "react-i18next";
@@ -38,7 +39,7 @@ export default function RegisterScreen() {
   const passwordRef = React.createRef<TextInput>();
 
   const loginButton = async() => {
-    // setIsDisabled(true)
+    setIsDisabled(true)
     // console.log(email)
     
     if(!Email_Validator(email) || !Password_Validator(password)) {setIsDisabled(false); return }

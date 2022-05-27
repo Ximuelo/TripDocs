@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert, ImageBackground, Keyboard, ScrollView, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
@@ -11,6 +11,7 @@ import Button from "../components/Button";
 import { deleteDocument, getDocuments, http, updateDocument, user } from "../utils/Auth";
 
 export default function ViewDocumentScreen(props:any){
+    const isFocused = useIsFocused();
     const parameters = props.route.params;
     const tailwind = useTailwind()
     const { t, i18n } = useTranslation();
@@ -85,8 +86,16 @@ export default function ViewDocumentScreen(props:any){
             <ScrollView style={tailwind("bg-[#212530] flex-1")} keyboardShouldPersistTaps="always">
                 <View style={tailwind("flex-row items-center justify-between")}>
                     <BackArrow />
-                    <TextInput style={tailwind("mt-14 text-white font-bold text-4xl")} placeholder={t("DocumentPlaceholder")}
-                    maxLength={15} value={name} onChangeText={setName} multiline={false} ref={nameRef} />
+                    <View style={tailwind("flex-row items-end")}>
+                        <TextInput style={tailwind("mt-14 text-white font-bold text-4xl")} placeholder={t("DocumentPlaceholder")}
+                        maxLength={12} value={name} onChangeText={setName} multiline={false} ref={nameRef} textAlignVertical={'top'}/>
+                        <Ionicons
+                        name="pencil" size={24} color="white"
+                        style={tailwind("ml-2 mb-3")}
+                        onPress={() => {
+                            nameRef.current?.focus();
+                        }}/>
+                    </View>
                     <View style={{width:32}}></View>
                 </View>
                 <ImageBackground source={imageBase64=="none"?{uri: http.ip+"/"+image+"?time=" + new Date()}:{uri: image}} style={tailwind(imageStyle)} imageStyle={tailwind("ml-2 mt-2 mr-2 h-80 rounded-xl justify-center")}>

@@ -110,7 +110,7 @@
       "Para proporcionar servicios basados ​​en la ubicación, 'TripDocs' puede recopilar, usar y compartir datos de ubicación precisos, incluida la ubicación geográfica en tiempo real de su computadora o dispositivo. A menos que nos dé su consentimiento, estos datos de ubicación se recopilan de forma anónima para que no puedan se utilizará para identificarlo personalmente, y se utilizará para proporcionar y mejorar sus productos y servicios basados ​​en la ubicación",
       "Sitios web y servicios de terceros",
       "Las aplicaciones pueden contener enlaces a sitios web, productos y servicios de terceros. También pueden usar u ofrecer productos o servicios de terceros. La recopilación de datos por parte de terceros, al ingresar datos sobre ubicaciones geográficas o detalles de contacto, se guiará por sus respectivos políticas de privacidad. Le recomendamos que consulte las políticas de privacidad de dichos terceros."
-    ]
-  
+    ],
+    "Loading": "Cargando..."
   }
 }
