@@ -1,14 +1,12 @@
-node_modules/
-.expo/
-dist/
-npm-debug.*
+node_modules/**/*
+build/**/*
+certs/**/*
+
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
 *.orig.*
-web-build/
 
-# macOS
-.DS_Store
+package-lock.json
