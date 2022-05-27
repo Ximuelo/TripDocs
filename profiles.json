@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "629135cffed59fb0f4c8da16"
+  },
+  "username": "profesor@gmail.com",
+  "name": "Profesor",
+  "characters": "skin_0|body1_0|mouth1|nose1|facialHair1|eyes1|hair3_0",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653683663830"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653683663830"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "62913693fed59fb0f4c8da1b"
+  },
+  "username": "profesor@gmail.com",
+  "profile_id": "629135cffed59fb0f4c8da16",
+  "name": "Test",
+  "collectionIndex": 0,
+  "img_url": "62913693fed59fb0f4c8da1b.png",
+  "effective_date": {
+    "$date": {
+      "$numberLong": "1653609600000"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653683859543"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653683859543"
+    }
+  },
+  "__v": 0
+}]

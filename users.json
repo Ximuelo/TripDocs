@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "629135cbfed59fb0f4c8da10"
+  },
+  "username": "profesor@gmail.com",
+  "password": "$2a$10$hYQeVox0CQ7vXuBisfFTd.ME0Av8dmolRG31mPtApui0xes0gJ8hO",
+  "subscription": "free",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653683659566"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653683659566"
+    }
+  },
+  "__v": 0
+}]
